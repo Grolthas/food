@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro de Comidas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Registro de Comidas</h1>
+    <a href="{{ url_for('add_food') }}">Añadir nueva comida</a>
+    <ul>
+        {% for food in foods %}
+        <li>{{ food[1] }} - Calorías: {{ food[2] }}, Proteínas: {{ food[3] }}g, Carbs: {{ food[4] }}g, Grasas: {{ food[5] }}g</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
